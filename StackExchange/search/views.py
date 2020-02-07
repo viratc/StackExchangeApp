@@ -10,10 +10,9 @@ class AdvancedSearch(APIView):
     Class contains the method to fetch data by hitting the StackExchange Endpoint 
     """
 
-    def get(self, request, **params):
+    def get(self, request):
         base_url = 'https://api.stackexchange.com/2.2/search/advanced'
-        # params = {'order': 'desc', 'sort': 'activity', 'site': 'stackoverflow'}
-
-        response = requests.get(base_url, params=params)
+        
+        response = requests.get(base_url, params=request.data)
 
         return Response(response.json(), status=status.HTTP_200_OK)
