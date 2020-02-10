@@ -10,6 +10,14 @@ export class SearchComponent implements OnInit {
 
   constructor(private searchService: SearchServiceService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    // Have all the form control buttons
+  }
+
+  // Function called when the `search` button is clicked
+  searchData(){
+    console.log("searchData function!!")
+  }
 
 }

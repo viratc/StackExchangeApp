@@ -1,40 +1,188 @@
+<p>
+    <mat-form-field>
+        <mat-label>Page</mat-label>
+        <input matInput placeholder="Page">
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>Page</mat-label>
-    <input matInput placeholder="Page">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>Page Size</mat-label>
+        <input matInput placeholder="Page Size">
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>Page Size</mat-label>
-    <input matInput placeholder="Page Size">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>From Date</mat-label>
+        <input matInput [matDatepicker]="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+        <mat-datepicker #fromDate></mat-datepicker>
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>From Date</mat-label>
-    <input matInput placeholder="From Date">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>To Date</mat-label>
+        <input matInput [matDatepicker]="toDate">
+        <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+        <mat-datepicker #toDate></mat-datepicker>
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>To Date</mat-label>
-    <input matInput placeholder="To Date">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>Order</mat-label>
+        <mat-select value="desc">
+            <mat-option value="desc">desc</mat-option>
+            <mat-option value="asc">asc</mat-option>
+        </mat-select>
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>Order</mat-label>
-    <input matInput placeholder="Order">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>Min</mat-label>
+        <input matInput placeholder="Min">
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>Min</mat-label>
-    <input matInput placeholder="Min">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>Max</mat-label>
+        <input matInput placeholder="Max">
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>Max</mat-label>
-    <input matInput placeholder="Max">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>Sort</mat-label>
+        <mat-select value="activity">
+            <mat-option value="activity">activity</mat-option>
+            <mat-option value="votes">votes</mat-option>
+            <mat-option value="creation">creation</mat-option>
+            <mat-option value="relevance">relevance</mat-option>
+        </mat-select>
+    </mat-form-field>
+</p>
 
-<mat-form-field>
-    <mat-label>Sort</mat-label>
-    <input matInput placeholder="Sort">
-</mat-form-field>
+<p>
+    <mat-form-field>
+        <mat-label>Q</mat-label>
+        <input matInput placeholder="Q">
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Accepted</mat-label>
+        <mat-select>
+            <mat-option value="True">True</mat-option>
+            <mat-option value="False">False</mat-option>
+        </mat-select>
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Answers</mat-label>
+        <input matInput placeholder="Answers">
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Body</mat-label>
+        <input matInput placeholder="Body">
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Closed</mat-label>
+        <mat-select>
+            <mat-option value="True">True</mat-option>
+            <mat-option value="False">False</mat-option>
+        </mat-select>
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Migrated</mat-label>
+        <mat-select>
+            <mat-option value="True">True</mat-option>
+            <mat-option value="False">False</mat-option>
+        </mat-select>
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Notice</mat-label>
+        <mat-select>
+            <mat-option value="True">True</mat-option>
+            <mat-option value="False">False</mat-option>
+        </mat-select>
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Nottagged</mat-label>
+        <input matInput placeholder="nottagged">
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Tagged</mat-label>
+        <input matInput placeholder="Tagged">
+    </mat-form-field>    
+</p>
+    
+<p>
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title">
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>User</mat-label>
+        <input matInput placeholder="User">
+    </mat-form-field>    
+</p>
+    
+<p>
+    <mat-form-field>
+        <mat-label>Url</mat-label>
+        <input matInput placeholder="Url">
+    </mat-form-field>    
+</p>
+    
+<p>
+    <mat-form-field>
+        <mat-label>Views</mat-label>
+        <input matInput placeholder="Views">
+    </mat-form-field>    
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Wiki</mat-label>
+        <mat-select>
+            <mat-option value="True">True</mat-option>
+            <mat-option value="False">False</mat-option>
+        </mat-select>
+    </mat-form-field>    
+</p>
+
+<div style="margin: 0 auto; align-content: center;">
+    <button mat-button-raise style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
+</div>
+
+<!-- Element to receive the response -->
+
+    
