@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchServiceService } from './search-service.service';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -8,16 +9,48 @@ import { SearchServiceService } from './search-service.service';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private searchService: SearchServiceService) { }
+  searchForm: FormGroup;
 
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder, private searchService: SearchServiceService) {
+    this.searchForm = this.createFormGroup(formBuilder);
+   }
 
-    // Have all the form control buttons
+  ngOnInit() {}
+
+  // Have all the form control buttons
+  createFormGroup(formBuilder: FormBuilder) {
+
+    return formBuilder.group({
+      page: '',
+      pageSize: '',
+      fromDate: '',
+      toDate: '',
+      order: 'desc',
+      min: '',
+      max: '',
+      sort: 'activity',
+      q: '',
+      accepted: '',
+      answers: '',
+      body: '',
+      closed: '',
+      migrated: '',
+      notice: '',
+      notTagged: '',
+      tagged: '',
+      title: '',
+      user: '',
+      url: '',
+      views: '',
+      wiki: '', 
+    });
+    
   }
 
   // Function called when the `search` button is clicked
   searchData(){
-    console.log("searchData function!!")
+    console.log("searchData function!!");
+    
   }
 
 }
