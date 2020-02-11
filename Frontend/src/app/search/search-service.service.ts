@@ -12,7 +12,9 @@ export class SearchServiceService {
   constructor(private http: HttpClient) { }
 
   getData(params){
-    let url = this.baseUrl + '/?' + params;
-    return this.http.get<any>(url);
+    let url = this.baseUrl;
+    console.log("url:", url);
+    
+    return this.http.get<any>(url, params);
   }
 }

@@ -1,6 +1,6 @@
-<form [formGroup]="searchForm" novalidate>
+<form [formGroup]="searchForm" (ngOnsubmit)="searchData()" novalidate>
     <p>
-        <mat-form-field>
+        <mat-form-field> 
             <mat-label>Page</mat-label>
             <input matInput formControlName="page" placeholder="Page">
         </mat-form-field>
@@ -179,12 +179,21 @@
             </mat-select>
         </mat-form-field>    
     </p>
+
+    <!-- <div style="margin: 0 auto; align-content: center;">
+        <button mat-button-raise type="submit" style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
+    </div> -->
+
 </form>
 
 <div style="margin: 0 auto; align-content: center;">
-    <button mat-button-raise style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
+    <button mat-button-raise type="submit" style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
 </div>
 
-    <!-- Element to receive the response -->
-
+<!-- Element to receive the response -->
+<mat-card *ngFor="let question of data">
+    <mat-card-content>
+        {{question}}
+    </mat-card-content>
+</mat-card>
         

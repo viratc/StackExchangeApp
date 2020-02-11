@@ -15,8 +15,7 @@ SECRET_KEY = '$^==&38uxlep0y_qdvc#m0=k13^v3a3_yef91y*gcasmf2k##4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -63,6 +62,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'StackExchange.wsgi.application'
 
+# CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+    # 'http://127.0.0.1:4300',
+    "http://localhost:4300",
+)
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -95,8 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

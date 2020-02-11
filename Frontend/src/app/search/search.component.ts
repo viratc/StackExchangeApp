@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchServiceService } from './search-service.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class SearchComponent implements OnInit {
 
   searchForm: FormGroup;
+  data: any = [];
 
   constructor(private formBuilder: FormBuilder, private searchService: SearchServiceService) {
     this.searchForm = this.createFormGroup(formBuilder);
@@ -42,14 +44,21 @@ export class SearchComponent implements OnInit {
       user: '',
       url: '',
       views: '',
-      wiki: '', 
+      wiki: '',
+      site: 'stackoverflow', 
     });
     
   }
 
   // Function called when the `search` button is clicked
   searchData(){
-    console.log("searchData function!!");
+    
+    const params = Object.assign({}, this.searchForm.value); 
+    console.log("params:", JSON.stringify(params));
+    
+    this.searchService.getData(params).subscribe(data => {
+      this.data = data;
+    });
     
   }
 

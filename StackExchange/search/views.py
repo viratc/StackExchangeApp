@@ -13,6 +13,9 @@ class AdvancedSearch(APIView):
     def get(self, request):
         base_url = 'https://api.stackexchange.com/2.2/search/advanced'
         
+        print("request.data:", request, request.data,)
+    
         response = requests.get(base_url, params=request.data)
+        print("response:", response)
 
         return Response(response.json(), status=status.HTTP_200_OK)
