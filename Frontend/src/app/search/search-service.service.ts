@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,9 @@ export class SearchServiceService {
   getData(params){
     let url = this.baseUrl;
     console.log("url:", url);
+
+    console.log("params in service:", params)
     
-    return this.http.get<any>(url, params);
+    return this.http.put(url, params);
   }
 }

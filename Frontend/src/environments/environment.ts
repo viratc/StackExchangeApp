@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://127.0.0.1:8000/search'
+  baseUrl: 'http://localhost:8080/search/'
 };
 

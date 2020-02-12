@@ -52,14 +52,17 @@ export class SearchComponent implements OnInit {
 
   // Function called when the `search` button is clicked
   searchData(){
+
+    let newData = [];
     
     const params = Object.assign({}, this.searchForm.value); 
     console.log("params:", JSON.stringify(params));
     
     this.searchService.getData(params).subscribe(data => {
-      this.data = data;
+      this.data = data['items'];
     });
     
+    console.log("data:", this.data)
   }
 
 }
