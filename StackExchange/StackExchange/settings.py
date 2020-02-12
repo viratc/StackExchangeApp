@@ -87,6 +87,8 @@ WSGI_APPLICATION = 'StackExchange.wsgi.application'
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
+    'http://localhost:4200',
+    'http://localhost:4300',
 )
 
 ALLOWED_HOSTS = ['*']

@@ -181,14 +181,10 @@
     </p>
 
     <div style="margin: 0 auto; align-content: center;">
-        <button mat-button-raise type="submit" style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
+        <button mat-button-raise style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
     </div>
 
 </form>
-
-<!-- <div style="margin: 0 auto; align-content: center;">
-    <button mat-button-raise type="submit" style="margin: 0 auto; display: block;" (click)="searchData()">Search</button>
-</div> -->
 
 <mat-divider></mat-divider>
 
@@ -196,11 +192,22 @@
 <mat-card *ngFor="let question of data">
     <mat-card-header>
         <mat-card-title>
-            <a href="{{question.link}}">
-                {{question.title}}        
-            </a>
+            {{question.title}}        
         </mat-card-title>
         <mat-card-subtitle>{{question.tags}}</mat-card-subtitle>
     </mat-card-header>
+    <mat-card-content>
+        <p>
+            link: <a href="{{question.link}}">{{question.title}}</a>
+        </p>
+    </mat-card-content>
 </mat-card>
+
+<!-- Paginator -->
+<div *ngIf="data.length > 0">
+    <mat-paginator></mat-paginator>
+</div>
+
+
+
         

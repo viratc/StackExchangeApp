@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { SearchServiceService } from './search-service.service';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-search',
@@ -12,8 +13,9 @@ export class SearchComponent implements OnInit {
 
   searchForm: FormGroup;
   data: any = [];
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 
-  constructor(private formBuilder: FormBuilder, private searchService: SearchServiceService) {
+  constructor(private formBuilder: FormBuilder, private searchService: SearchServiceService, private changeDetectorRef: ChangeDetectorRef) {
     this.searchForm = this.createFormGroup(formBuilder);
    }
 
@@ -52,17 +54,16 @@ export class SearchComponent implements OnInit {
 
   // Function called when the `search` button is clicked
   searchData(){
-
-    let newData = [];
     
     const params = Object.assign({}, this.searchForm.value); 
-    console.log("params:", JSON.stringify(params));
+    // console.log("params:", JSON.stringify(params));
     
     this.searchService.getData(params).subscribe(data => {
       this.data = data['items'];
     });
     
     console.log("data:", this.data)
+
   }
 
 }
